@@ -18,30 +18,25 @@ int main(void) {
     if (fgets(s, sizeof(s), stdin) == NULL) {
         printf("No se pudo leer la secuencia.\n");
         return 1;
-    }
-    if (strlen(s)-1 != k) {
-        printf("La secuencia ingresada es invalida.\n");
-        return 1;
-    }
+    }    
 
     while (1) {
-        int hayP = 0;
+        int hayA = 0;
         int cambio = 0;
         char siguiente[100];
 
         strcpy(siguiente, s);
 
         for (int i = 0; i < k; i++) {
-            if (s[i] == 'P') {
-                hayP = 1;
-                if ((i > 0 && s[i-1] == 'A') || (i+1 < k && s[i+1] == 'A')) {
-                    siguiente[i] = 'A';
+            if (s[i] == 'A') {
+                hayA = 1;
+                if ((i+1 < k && s[i+1] == 'P')) {
+                    siguiente[i+1] = 'A';
                     cambio = 1;
                 }
             }
         }
-
-        if (!hayP || !cambio) {
+        if (!hayA || !cambio) {
             printf("%d\n", minutos);
             return 0;
         }
