@@ -7,6 +7,7 @@ int main() {
     while(1) {
         for(int i = 0; i < 3; i++)  
             scanf("%d", &numeros[i]);
+        getchar();
         
         if((numeros[0] == 0 && numeros[1] == 0) || (numeros[1] == 0 && numeros[2] == 0))
             break;
