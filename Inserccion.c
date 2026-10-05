@@ -15,7 +15,7 @@ void insercion(int a[], int n) {
         }
         a[i + 1] = key;
     }
-}
+} 
 
 
 int main() {
@@ -26,7 +26,7 @@ int main() {
 
     srand(time(NULL)); 
     for (int i = 0; i < n; i++) {
-        arr[i] = rand() % 1000 + 1;
+        arr[i] = rand() % 20001 - 10000;
     }
 
     if(n < 50) {

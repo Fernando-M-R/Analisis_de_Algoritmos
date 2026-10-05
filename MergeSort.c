@@ -12,7 +12,7 @@ void merge(int A[], int p, int q, int r) {
     for (int i = 0; i < n1; i++)
         L[i] = A[p + i];
     for (int j = 0; j < n2; j++)
-        R[j] = A[q + 1 + j];
+        R[j] = A[q + 1 + j]; 
         
     L[n1] = INT_MAX;
     R[n2] = INT_MAX;
@@ -51,7 +51,7 @@ int main() {
 
     srand(time(NULL)); 
     for (int i = 0; i < n; i++) {
-        arr[i] = rand() % 1000 + 1;
+        arr[i] = rand() % 20001 - 10000;
     }
 
     if(n < 50) {

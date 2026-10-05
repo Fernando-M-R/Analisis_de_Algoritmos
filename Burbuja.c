@@ -20,7 +20,7 @@ void Burbuja(int a[], int len) {
         }
         pasadas++;
     }
-}
+} 
 
 int main() {
     int n;
@@ -30,7 +30,7 @@ int main() {
 
     srand(time(NULL)); 
     for (int i = 0; i < n; i++) {
-        arr[i] = rand() % 1000 + 1;
+        arr[i] = rand() % 20001 - 10000;
     }
 
     if(n < 50) {
