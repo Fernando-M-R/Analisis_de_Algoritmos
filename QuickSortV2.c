@@ -35,11 +35,11 @@ int ParticionAleatoria(int Arr[], int p, int r){
     return Particion(Arr, p, r); 
 }
 
-void QuickSort(int Arr[], int p, int r){
+void QuickSortAleatorio(int Arr[], int p, int r){
     if(p<r){
         int q=ParticionAleatoria(Arr, p, r);
-        QuickSort(Arr, p,  q-1);
-        QuickSort(Arr, q+1, r);
+        QuickSortAleatorio(Arr, p,  q-1);
+        QuickSortAleatorio(Arr, q+1, r);
     }
 }
 
@@ -83,7 +83,7 @@ int main() {
     }
     
     clock_t inicio = clock();
-    QuickSort(arr, 0, n - 1);
+    QuickSortAleatorio(arr, 0, n - 1);
     clock_t fin = clock();
     double tiempo = ((double)(fin - inicio) / CLOCKS_PER_SEC) * 1000.0;
 
