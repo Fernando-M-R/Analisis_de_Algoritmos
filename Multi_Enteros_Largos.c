@@ -124,9 +124,14 @@ int SiguientePotenciaDe2(int n1, int n2) {
 }
 
 void ImprimirSinCeros(int *arr, int n){
-    for(int i=0; i<n; i++){
-        
+    int no=1, i=0;
+    while(no){
+        if(!(arr[i]==0 && arr[i+1]==0))
+            no=0;
+        i++;
     }
+    for(int j=i; j<n; j++)
+        printf("%d", arr[j]);
 }
 
 int* RellenarCeros(const char *num, int n, int nPotencia) {
@@ -151,7 +156,7 @@ int main() {
     int n1, n2;
 
     printf("Algoritmo de multiplicacion de enteros largos\n");
-    printf("Ingrese el primer numero a multiplicar: ");
+    printf("Ingrese el primer numero a multiplicar:  ");
     scanf("%s", text1);
     printf("Ingrese el segundo numero a multiplicar: ");
     scanf("%s", text2);
@@ -164,14 +169,10 @@ int main() {
     int *num2 = RellenarCeros(text2, n2, nPotencia);
 
     printf("\nNumero 1: ");
-    for (int i = 0; i < nPotencia; i++) {
-        printf("%d", num1[i]);
-    }
+    ImprimirSinCeros(num1, nPotencia);
 
     printf("\nNumero 2: ");
-    for (int i = 0; i < nPotencia; i++) {
-        printf("%d", num2[i]);
-    }
+    ImprimirSinCeros(num2, nPotencia);
 
     clock_t inicio = clock();
     int *resultadoFinal = Multiplicacion(num1, num2, nPotencia);
@@ -179,9 +180,7 @@ int main() {
     double tiempo = ((double)(fin - inicio) / CLOCKS_PER_SEC) * 1000.0;
 
     printf("\nResultado:");
-    for (int i = 0; i < nPotencia*2; i++) {
-        printf("%d", resultadoFinal[i]);
-    }
+    ImprimirSinCeros(resultadoFinal, nPotencia*2);
 
     printf("\nTiempo de ejecucion: %.15f ms\n", tiempo);
 
