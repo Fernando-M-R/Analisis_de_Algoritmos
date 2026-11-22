@@ -36,15 +36,5 @@ int main(){
     Letras[n] = '\0';
     Permutacion(Letras, 0, n - 1);
     printf("\n");
-
-    
-
-
-    
-    
-
-
-
-
     return 0;
 }
