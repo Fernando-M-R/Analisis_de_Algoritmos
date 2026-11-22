@@ -6,9 +6,6 @@ def Arreglo_numerios_aleatorios(n):
         arreglo.append(random.randint(0, 20))
     return arreglo
 
-def Ordenar_arreglo(arreglo):
-    return sorted(arreglo, reverse=True)
-
 def Encontrar_conjunto(arreglo_ordenado):
     suma_total = sum(arreglo_ordenado)
     suma_optima = 0
@@ -27,7 +24,7 @@ print(f"Ingresa el tamaño del arreglo:\n")
 n = int(input())
 arreglo = Arreglo_numerios_aleatorios(n)
 print(f"Arreglo generado: {arreglo}\n")
-arreglo_ordenado = Ordenar_arreglo(arreglo)
+arreglo_ordenado = sorted(arreglo, reverse=True)
 print(f"Arreglo ordenado descendente: {arreglo_ordenado}\n")
 conjunto1, conjunto2 = Encontrar_conjunto(arreglo_ordenado)
 print(f"Conjunto encontrado: {conjunto1} | Total: {len(conjunto1)} elementos | Suma: {sum(conjunto1)}\n")
